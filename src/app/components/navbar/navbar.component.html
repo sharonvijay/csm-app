@@ -1,0 +1,20 @@
+<nav class="bg-gray-200 text-gray-800 shadow-md">
+  <div class="container mx-auto flex justify-between items-center p-4">
+    <a routerLink="/" class="text-lg font-bold text-indigo-800">NetServe</a>
+    
+    <div class="flex space-x-4">
+      <a [routerLink]="['/']" routerLinkActive="active" class="text-indigo-800">Home</a>
+      <a [routerLink]="['/raise-issue']" routerLinkActive="active" class="text-indigo-600">Raise Issue</a>
+      <a [routerLink]="['/status']" routerLinkActive="active" class="text-indigo-600">Status</a>
+    </div>
+
+    <div>
+      <button [routerLink]="['/login']" routerLinkActive="active" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+        Login
+      </button>
+      <button [routerLink]="['/register']" routerLinkActive="active" class="bg-white text-blue font-bold py-2 px-4 rounded-full">
+        Register
+      </button>
+    </div>
+  </div>
+</nav>
