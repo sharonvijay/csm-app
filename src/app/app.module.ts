@@ -12,6 +12,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
+import { RaiseIssueComponent } from './components/raise-issue/raise-issue.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { RouterModule } from '@angular/router';
     FeaturesComponent,
     LoginComponent,
     RegistrationComponent,
+    RaiseIssueComponent,
   ],
   imports: [
     BrowserModule,
