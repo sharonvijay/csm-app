@@ -47,12 +47,16 @@
         </div>
         <div class="p-4 sm:p-8">
           
-          <input id="name" type="text" class="mt-4 w-full resize-y overflow-auto rounded-lg border border-gray-300 px-4 py-2 shadow-sm focus:border-blue-500 focus:outline-none hover:border-blue-500" placeholder="Enter your name"/>
-          <input id="email" type="email" class="peer mt-8 w-full resize-y overflow-auto rounded-lg border border-gray-300 px-4 py-2 shadow-sm focus:border-blue-500 focus:outline-none hover:border-blue-500" placeholder="Enter your email" />
-          <div class="peer-invalid:block mt-1 hidden text-left text-xs text-rose-600">Email format Incorrect. Please complete the email</div>
-          <label class="mt-5 mb-2 inline-block max-w-full">Describe your Problem</label>
-          <textarea id="about" class="mb-8 w-full resize-y overflow-auto rounded-lg border border-gray-300 px-4 py-2 shadow-sm focus:border-blue-500 focus:outline-none hover:border-blue-500"></textarea>
-          <button class="w-full rounded-lg border border-blue-700 bg-blue-700 p-3 text-center font-medium text-white outline-none transition focus:ring hover:border-blue-700 hover:bg-blue-600 hover:text-white">Submit</button>
+          <input id="user_id" type="number" class="mt-4 w-full resize-y overflow-auto rounded-lg border border-gray-300 px-4 py-2 shadow-sm focus:border-blue-500 focus:outline-none hover:border-blue-500" placeholder="Enter your user id"/>
+          <select id="issueType" name="issueType" required class="mt-4 w-full resize-y overflow-auto rounded-lg border border-gray-300 px-4 py-2 shadow-sm focus:border-blue-500 focus:outline-none hover:border-blue-500">
+            <option value="">--Please choose an issue type--</option>
+            <option value="billing">Billing</option>
+            <option value="technical">Technical Support</option>
+            <option value="account">Account Management</option>
+            <option value="feedback">Feedback</option>
+            <option value="other">Other</option>
+          </select>
+          <button class="mt-4 w-full rounded-lg border border-blue-700 bg-blue-700 p-3 text-center font-medium text-white outline-none transition focus:ring hover:border-blue-700 hover:bg-blue-600 hover:text-white">Submit</button>
         </div>
       </div>
     </div>

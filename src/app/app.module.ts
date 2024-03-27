@@ -13,6 +13,7 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { RaiseIssueComponent } from './components/raise-issue/raise-issue.component';
+import { StatusComponent } from './components/status/status.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { RaiseIssueComponent } from './components/raise-issue/raise-issue.compon
     LoginComponent,
     RegistrationComponent,
     RaiseIssueComponent,
+    StatusComponent,
   ],
   imports: [
     BrowserModule,
