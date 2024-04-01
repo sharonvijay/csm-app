@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import axios from 'axios';
-import { Issue} from '../models/issue.model';
+import { RaiseIssue } from '../models/raise-issue.model';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,7 @@ export class RaiseIssueService {
   private raiseIssueUrl = this.baseUrl+'/createIssue';
 
   constructor() { }
-  async raiseIssue(issue : Issue):Promise<any>
+  async raiseIssue(issue : RaiseIssue):Promise<any>
   {
     try {
       const response = await axios.post(this.raiseIssueUrl,issue);

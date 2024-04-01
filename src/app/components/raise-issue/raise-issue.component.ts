@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Issue } from 'src/app/models/issue.model';
+import { RaiseIssue } from 'src/app/models/raise-issue.model';
 import { RaiseIssueService } from 'src/app/services/raise-issue.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { RaiseIssueService } from 'src/app/services/raise-issue.service';
   styleUrls: ['./raise-issue.component.css']
 })
 export class RaiseIssueComponent {
-  issue : Issue ={
+  issue : RaiseIssue ={
     userId:0,
     issueName:''
   }
