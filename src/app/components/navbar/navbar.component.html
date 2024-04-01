@@ -20,13 +20,23 @@
       <a routerLink="/status" routerLinkActive="active" class="text-indigo-600">Status</a>
     </div>
     <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-      <button [routerLink]="['/login']" routerLinkActive="active" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-        Login
-      </button>
-      <button [routerLink]="['/register']" routerLinkActive="active" class="bg-white text-blue font-bold py-2 px-4 rounded-full">
-        Register
-      </button>
+      <ng-container *ngIf="loggedIn; else loggedOut">
+        <!-- Show logout button if user is logged in -->
+        <button (click)="logout()" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full">
+          Logout
+        </button>
+      </ng-container>
+      <ng-template #loggedOut>
+        <!-- Show login and register buttons if user is not logged in -->
+        <button *ngIf="default" [routerLink]="['/login']" routerLinkActive="active" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+          Login
+        </button>
+        <button *ngIf="default" [routerLink]="['/register']" routerLinkActive="active" class="bg-white text-blue font-bold py-2 px-4 rounded-full">
+          Register
+        </button>
+      </ng-template>
     </div>
+    
   </nav>
   <!-- Mobile menu, show/hide based on menu open state. -->
   <div class="lg:hidden" role="dialog" aria-modal="true">

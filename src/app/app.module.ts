@@ -14,6 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { RaiseIssueComponent } from './components/raise-issue/raise-issue.component';
 import { StatusComponent } from './components/status/status.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { StatusComponent } from './components/status/status.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     RouterModule
   ],
