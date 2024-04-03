@@ -47,9 +47,10 @@
         </div>
         <div class="p-4 sm:p-8">
           <form #raiseIssueForm = "ngForm" (ngSubmit)="rasieIssue(raiseIssueForm)">
-            <input id="userId" name="userId" [(ngModel)]="issue.userId" type="number" class="mt-4 w-full resize-y overflow-auto rounded-lg border border-gray-300 px-4 py-2 shadow-sm focus:border-blue-500 focus:outline-none hover:border-blue-500" placeholder="Enter your user id"/>
+            <label for="userId" class="block font-medium">User ID:</label>
+            <div class="mt-4 w-full resize-y overflow-auto rounded-lg border border-gray-300 px-4 py-2 shadow-sm focus:border-blue-500 focus:outline-none hover:border-blue-500">{{ issue.userId }}</div> <!-- Display userId as text -->
             <select id="issueType" name="issueType" [(ngModel)]="issue.issueName" required class="mt-4 w-full resize-y overflow-auto rounded-lg border border-gray-300 px-4 py-2 shadow-sm focus:border-blue-500 focus:outline-none hover:border-blue-500">
-              <option value="">--Please choose an issue type--</option>
+              <option value="">Select Issue Type</option>
               <option value="billing">Billing</option>
               <option value="technical">Technical Support</option>
               <option value="account">Account Management</option>
@@ -63,5 +64,5 @@
       </div>
     </div>
 </section>
-  
+<app-footer></app-footer>  
   

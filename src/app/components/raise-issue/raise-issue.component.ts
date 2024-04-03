@@ -16,7 +16,12 @@ export class RaiseIssueComponent {
   successMessage: string = '';
 
 
-  constructor(private raiseIssueService : RaiseIssueService){}
+  constructor(private raiseIssueService : RaiseIssueService){
+    const userIdFromStorage = localStorage.getItem('userId');
+    if (userIdFromStorage !== null) {
+      this.issue.userId = parseInt(userIdFromStorage, 10);
+    }
+  }
 
   async rasieIssue(form : NgForm)
   {
@@ -28,7 +33,7 @@ export class RaiseIssueComponent {
       setTimeout(() => {
         this.successMessage = 'Issue raised successfully';
         form.resetForm();
-        this.issue = { userId: 0, issueName: '' };
+        this.issue = { userId: this.issue.userId, issueName: '' };
       }, 1000);
 
       setTimeout(() => {

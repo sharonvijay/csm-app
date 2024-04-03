@@ -15,6 +15,8 @@ import { RouterModule } from '@angular/router';
 import { RaiseIssueComponent } from './components/raise-issue/raise-issue.component';
 import { StatusComponent } from './components/status/status.component';
 import { FormsModule } from '@angular/forms';
+import { ResolveIssueComponent } from './components/resolve-issue/resolve-issue.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -30,6 +32,8 @@ import { FormsModule } from '@angular/forms';
     RegistrationComponent,
     RaiseIssueComponent,
     StatusComponent,
+    ResolveIssueComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

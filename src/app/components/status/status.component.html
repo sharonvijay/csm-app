@@ -4,47 +4,28 @@
     <div class="mx-auto max-w-2xl lg:text-center"></div>
 <div class="container">
   <h3 class="status-heading">Track your Status</h3>
-  <table class="status-table">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Type of Issue</th>
-        <th>Status</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1</td>
-        <td>John Doe</td>
-        <td>Network Connectivity</td>
-        <td><span class="status-active">ACTIVE</span></td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>John Doe</td>
-        <td>Network Connectivity</td>
-        <td><span class="status-resolved">RESOLVED</span></td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>John Doe</td>
-        <td>Network Connectivity</td>
-        <td><span class="status-rejected">REJECTED</span></td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>John Doe</td>
-        <td>Network Connectivity</td>
-        <td><span class="status-active">ACTIVE</span></td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>John Doe</td>
-        <td>Network Connectivity</td>
-        <td><span class="status-resolved">RESOLVED</span></td>
-      </tr>
-      <!-- Add more rows for other users and their issue statuses -->
-    </tbody>
-  </table>
+  <ng-container *ngIf="!loggedOut; else loginMessage">
+    <table class="status-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Raised At</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let issue of data">
+          <td>{{ issue.id }}</td>
+          <td>{{ issue.name }}</td>
+          <td>{{ issue.raisedAt }}</td>
+          <td><span [ngClass]="{ 'status-active': issue.status === 'ACTIVE', 'status-processing': issue.status ==='PROCESSING' ,'status-resolved': issue.status === 'RESOLVED', 'status-rejected': issue.status === 'REJECTED' }">{{ issue.status }}</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </ng-container>
+  <ng-template #loginMessage>
+    <div class="login-message">Login to view your issue status</div>
+  </ng-template>
 </div>
+<app-footer></app-footer>

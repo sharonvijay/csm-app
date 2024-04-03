@@ -1,0 +1,39 @@
+<app-navbar></app-navbar>
+<div class="bg-white py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl lg:text-center"></div>
+<div class="container">
+  <h3 class="status-heading">Admin Resolve Issue</h3>
+  <table class="status-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Issue</th>
+        <th>Raised At</th>
+        <th>Raised By</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let issue of data" [id]="'issue-' + issue.id">
+        <td>{{ issue.id }}</td>
+        <td>{{ issue.name }}</td>
+        <td>{{ issue.raisedAt }}</td>
+        <td>{{ issue.raisedBy.name}}</td>
+        <td><span [ngClass]="{ 'status-active': issue.status === 'ACTIVE', 'status-processing': issue.status ==='PROCESSING' ,'status-resolved': issue.status ==='RESOLVED','status-rejected':issue.status ==='REJECTED'}">{{ issue.status }}</span></td>
+        <td>
+          <form #resolveIssueForm = "ngForm"  class="max-w-sm mx-auto">
+            <select id="action" name="issueStatus" [(ngModel)]="issue.issueStatus" (change)="updateStatus(issue)"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+              <option value="" selected disabled hidden>Choose an Action</option>
+              <option value="PROCESSING">ACCEPT</option>
+              <option value="RESOLVED">RESOLVE</option>
+              <option value="REJECTED">REJECT</option>
+            </select>
+          </form>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<app-footer></app-footer>
